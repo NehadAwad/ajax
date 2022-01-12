@@ -12,11 +12,14 @@
             </td>
         </tr>
         <tr>
-            <td id="table-form">
+            <form id="addForm">
                 First Name: <input type="text" id="fname">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 Last Name: <input type="text" id="lname">
                 <input type="submit" id="save-button" value="Save">
-            </td>
+            </form>
+<!--            <td id="table-form">-->
+<!--               -->
+<!--            </td>-->
         </tr>
         <tr>
             <td id="table-data">
@@ -56,6 +59,7 @@
                 success: function (data){
                     if(data == 1){
                         loadTable();
+                        $("#addForm").trigger("reset");
                     }else{
                         alert("Can't load data");
                     }
