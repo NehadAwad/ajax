@@ -16,7 +16,7 @@
                 First Name: <input type="text" id="fname">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 Last Name: <input type="text" id="lname">
                 <input type="submit" id="save-button" value="Save">
-                <p id="alert-text-01" style="color: red"></p>
+                <p id="alert-text-01" style="color: red; margin-left: 4px"></p>
             </form>
 <!--            <td id="table-form">-->
 <!--               -->
@@ -51,6 +51,8 @@
             var lname = $("#lname").val();
 
             if( fname == "" | lname == ""){
+                $("#alert-text-01").html("Fill Both Fields*");
+            }else{
                 $.ajax({
                     url: "ajax-insert.php",
                     type: "POST",
@@ -64,8 +66,7 @@
                         }
                     }
                 });
-            }else{
-                $("#alert-text-01").html("Fill Both Fields*");
+
             }
 
 
