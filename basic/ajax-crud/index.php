@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <title>AJAX Insert Data</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -45,6 +46,7 @@
         }
         loadTable();
 
+        //insert new row
         $("#save-button").on("click", function (e){
             e.preventDefault();
             var fname = $("#fname").val();
@@ -66,12 +68,14 @@
                         }
                     }
                 });
-
             }
 
-
-
         })
+
+        //delete row
+        $(".delete-btn").on("click", function (){
+            var studentId = $(this).data("id");
+        });
     });
 </script>
 </body>
